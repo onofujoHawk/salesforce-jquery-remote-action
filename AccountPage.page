@@ -1,0 +1,54 @@
+<apex:page standardStylesheets="false" showHeader="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0" controller="AccountCtrl" >
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Account jQuery Remote Action</title>
+  <meta name="description" content="La pagina del tuo abbonamento" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+
+  <!-- semantic UI -->
+  <link rel="stylesheet" href="style/semantic.min.css" />
+  <script type="text/javascript" src="style/semantic.min.js"></script>
+
+  <!-- inline style -->
+  <style>
+    body, #acctMessage {
+      padding-top: 50px;
+    }
+  </style>
+
+</head>
+<body>
+  <!-- container -->
+  <div class="ui container">
+    <!-- input -->
+    <form class="ui form">
+      <div class="field">
+        <label>Search</label>
+        <div class="ui action input">
+          <input type="text" placeholder="Enter the address..." size="100" id="acctSearch" name="address">
+          <button class="ui button inverted teal" onclick="getAccountCityRemoteAction();">Find Address</button>
+        </div>
+      </div>
+    </form>
+    <!-- result -->
+    <div class="ui message" id="acctMessage" style="display: none;">
+      <i class="close icon"></i>
+      <!-- <div class="header" id="header"></div> -->
+      <div id="acctAddressDisplay"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="script/Message.js"></script>
+  <script type="text/javascript" src="script/Remoting.js"></script>
+</body>
+</html>
+</apex:page>
